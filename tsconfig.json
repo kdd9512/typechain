@@ -1,0 +1,11 @@
+// tsconfig.json 이라는 이름은 변경되어서는 안된다. 반드시 이 이름과 확장자로 만들어야 함.
+// 이 파일 생성법: 터미널에서 touch tsconfig.json
+// outDir : TS 파일을 컴파일한 결과물인 JS 를 무슨 이름의 폴더에 넣을 것인지?
+// target : 어떤 버전의 JS 로 컴파일할 것인지?
+{
+  "include": ["src"],
+  "compilerOptions": {
+    "outDir": "build",
+    "target": "ES6"
+  }
+}
