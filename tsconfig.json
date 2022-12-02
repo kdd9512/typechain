@@ -1,11 +1,19 @@
 // tsconfig.json 이라는 이름은 변경되어서는 안된다. 반드시 이 이름과 확장자로 만들어야 함.
 // 이 파일 생성법: 터미널에서 touch tsconfig.json
+
 // outDir : TS 파일을 컴파일한 결과물인 JS 를 무슨 이름의 폴더에 넣을 것인지?
 // target : 어떤 버전의 JS 로 컴파일할 것인지?
+
+// lib : 합쳐진 라이브러리의 정의 파일을 특정한다 = 컴파일된 JS 가 어떤 환경에서 실행되게 할 것인지?
+// Typescript 는 처음부터 DOM API 에 대한 정보를 가지고 있지 않기에, 이를 사용하기 위해 lib 에서 유형을 정의해야만 한다.
+// 예제에서는 ES6 버전의 JS 를 DOM(=브라우저 환경) 에서 실행하도록 설정.
+// ** 즉 이 설정이 없으면 TS가 브라우저에서 동작하는 document 나 window 를 인식하지 못한다. **
+
 {
   "include": ["src"],
   "compilerOptions": {
     "outDir": "build",
-    "target": "ES6"
+    "target": "ES6",
+    "lib": ["ES6", "DOM"]
   }
 }
