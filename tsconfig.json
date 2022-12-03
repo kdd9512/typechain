@@ -9,11 +9,14 @@
 // 예제에서는 ES6 버전의 JS 를 DOM(=브라우저 환경) 에서 실행하도록 설정.
 // ** 즉 이 설정이 없으면 TS가 브라우저에서 동작하는 document 나 window 를 인식하지 못한다. **
 
+// strict : TS 조건을 적용. .ts 파일에 TS 를 적용한다.
+
 {
   "include": ["src"],
   "compilerOptions": {
     "outDir": "build",
     "target": "ES6",
-    "lib": ["ES6", "DOM"]
+    "lib": ["ES6", "DOM"],
+    "strict": true
   }
 }
