@@ -6,5 +6,29 @@
 // 직접 JS 파일을 import 하는 방법도 있다. 이 경우, js 파일 내부에서 해야할 작업이 있으므로 myPackage.js 를 참고.
 // import {init, exit} from "./myPackage";
 
+// * as : 해당 import 의 모든 구성요소를 불러온다.
+import crypto from "crypto";
 
-console.log("success!!");
+// 블록체인의 기초를 학습.
+interface BlockShape {
+    hash: string
+    prevHash: string;
+    height: number;
+    data: string
+}
+
+class Block implements BlockShape {
+    public hash: string;
+
+    constructor(
+        public data: string,
+        public height: number,
+        public prevHash: string,
+    ) {
+        this.hash = Block.calculateHash(prevHash, height, data);
+    }
+    static calculateHash(prevHash:string, height:number, data:string) {
+        const toHash = `${prevHash}${height}${data}`;
+    }
+
+}
